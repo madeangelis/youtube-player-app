@@ -73,9 +73,9 @@ const Main = () => {
                 {/* <Button variant="secondary" className="w-100 ">
                   Info
                 </Button> */}
-                <Link to="/info" className="btn secondary">
-                  Info
-                </Link>
+                <div className="btn secondary">
+                  <Link to="/info">Info</Link>
+                </div>
                 {""}
               </Col>
             </Row>

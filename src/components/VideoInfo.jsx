@@ -1,27 +1,40 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Image from "react-bootstrap/Image";
+import { useHistory } from "react-router";
 
-const VideoInfo = ({ title, image, description }) => {
+const VideoInfo = () => {
+  const video = useSelector((state) => state.videos[0]);
+  console.log(video);
+  const history = useHistory();
+
+  const handleBack = (e) => {
+    e.preventDefault();
+    history.replace("/");
+  };
+
   return (
     <Container>
       <Row className="mt-5 mb-2">
         <Col>
-          <Button variant="secondary" className="w-25">
+          <Button variant="secondary" className="w-25" onClick={handleBack}>
             Back
           </Button>
           {""}
-          <h1 className="my-3">{title}</h1>
+          <h1 className="my-3">{video.snippet.title}</h1>
         </Col>
       </Row>
       <Row className="mb-5">
         <Col lg={9}>
-          <Image src={image} fluid />
+          <Image src={video.snippet.thumbnails.high.url} fluid />
         </Col>
         <Col lg={3}>
           <div className="video-info">
-            <p>{description}</p>
+            <h6>Description:</h6>
+            <p>{video.snippet.description}</p>
+            <h6>Channel:</h6>
+            <p>{video.snippet.channelTitle}</p>
           </div>
         </Col>
       </Row>

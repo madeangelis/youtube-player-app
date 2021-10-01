@@ -9,17 +9,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route
-          exact
-          path="/info"
-          component={() => (
-            <VideoInfo
-              title={`Título de video`}
-              image={`../img/video.jpg`}
-              description={`descripcion`}
-            />
-          )}
-        />
+        <Route exact path="/info" component={() => <VideoInfo />} />
         <Redirect to="/" />
       </Switch>
     </BrowserRouter>
