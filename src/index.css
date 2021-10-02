@@ -40,3 +40,7 @@ input {
 .video-card-text p {
   font-size: 12px;
 }
+
+.btn-info {
+  color: #fff;
+}
