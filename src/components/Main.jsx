@@ -1,53 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { getVideoSearch } from "../redux/actions";
+import { useSelector } from "react-redux";
+
 import Player from "./player/Player";
-import VideoCard from "./VideoCard";
+
 import Message from "./Message";
+import SearchBar from "./SearchBar";
+import VideoList from "./VideoList";
 
 const Main = () => {
-  const [searchVideo, setSearchVideo] = useState("");
-  // const [searchResults, setSearchResults] = useState([]);
   const video = useSelector((state) => state.videos[0]);
-  const videoList = useSelector((state) => state.videos);
   const loading = useSelector((state) => state.isLoading);
-
-  const dispatch = useDispatch();
-  const handleChange = (e) => {
-    setSearchVideo(e.target.value);
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(getVideoSearch(searchVideo));
-  };
 
   return (
     <Container>
-      <form onSubmit={handleSubmit} className="row mt-5">
-        <Col lg={9}>
-          <div className="search-wrapper pb-3">
-            <input
-              className="w-100 px-2"
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Search"
-              value={searchVideo}
-              onChange={handleChange}
-            />
-          </div>
-        </Col>
-        <Col lg={3}>
-          <div className="button-wrapper">
-            <Button variant="secondary" onClick={handleSubmit}>
-              Search
-            </Button>
-            {""}
-          </div>
-        </Col>
-      </form>
+      <SearchBar />
       <Row>
         {video == null ? (
           <Col lg={9}>
@@ -78,18 +46,7 @@ const Main = () => {
           </Col>
         )}
 
-        <Col lg={3}>
-          <div className="related-videos">
-            {videoList.splice(1, 3).map((video, i) => (
-              <VideoCard
-                key={i}
-                title={video.snippet.title}
-                channel={video.snippet.channelTitle}
-                image={`https://i.ytimg.com/vi/${video.id.videoId}/hqdefault.jpg`}
-              />
-            ))}
-          </div>
-        </Col>
+        <VideoList />
       </Row>
     </Container>
   );

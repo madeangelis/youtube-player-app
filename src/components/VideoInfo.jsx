@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
+
+import { useSelector } from "react-redux";
 import Image from "react-bootstrap/Image";
 import { useHistory } from "react-router";
 
 const VideoInfo = () => {
   const video = useSelector((state) => state.videos[0]);
-  console.log(video);
   const history = useHistory();
 
   const handleBack = (e) => {
@@ -14,7 +15,9 @@ const VideoInfo = () => {
     history.replace("/");
   };
 
-  return (
+  return video == null ? (
+    <Redirect to="/" />
+  ) : (
     <Container>
       <Row className="mt-5 mb-2">
         <Col>

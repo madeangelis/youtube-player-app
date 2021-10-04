@@ -26,8 +26,8 @@ export function getVideoSearch(query) {
         (result) => {
           dispatch(getVideoSuccess(result.data));
         },
-        () => {
-          dispatch(getVideoFailure());
+        (error) => {
+          dispatch(getVideoFailure(error));
         }
       );
   };
