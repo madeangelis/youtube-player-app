@@ -16,7 +16,7 @@ function SearchBar() {
   };
   return (
     <>
-      <form onSubmit={handleSubmit} className="row mt-5">
+      <form onSubmit={handleSubmit} className="row mt-5 mb-2">
         <Col lg={9}>
           <div className="search-wrapper pb-3">
             <input

@@ -3,7 +3,6 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 
 import { useSelector } from "react-redux";
-import Image from "react-bootstrap/Image";
 import { useHistory } from "react-router";
 
 const VideoInfo = () => {
@@ -30,10 +29,12 @@ const VideoInfo = () => {
       </Row>
       <Row className="mb-5">
         <Col lg={9}>
-          <Image src={video.snippet.thumbnails.high.url} fluid />
+          <div className="image-wrapper">
+            <img src={video.snippet.thumbnails.high.url} alt="" />
+          </div>
         </Col>
         <Col lg={3}>
-          <div className="video-info">
+          <div className="video-info my-2">
             <h6>Description:</h6>
             <p>{video.snippet.description}</p>
             <h6>Channel:</h6>

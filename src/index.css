@@ -28,6 +28,21 @@ input {
 .related-videos img {
   width: 100%;
 }
+.video-card-img {
+  width: 100%;
+  object-fit: cover;
+}
+.video-card-img img {
+  width: 100%;
+  transition: ease-in 0.1s;
+}
+.video-card-img:hover {
+  cursor: pointer;
+}
+.video-card-img:hover img {
+  transform: scale(0.98);
+  transition: ease-in 0.1s;
+}
 
 .video-player-title h1 {
   font-size: 20px;
@@ -43,4 +58,12 @@ input {
 
 .btn-info {
   color: #fff;
+}
+
+.image-wrapper {
+  width: 100%;
+  object-fit: cover;
+}
+.image-wrapper img {
+  width: 100%;
 }

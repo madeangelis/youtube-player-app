@@ -1,12 +1,8 @@
 import React from "react";
-
-import { useSelector } from "react-redux";
 import { Col } from "react-bootstrap";
-
 import VideoCard from "./VideoCard";
 
-const VideoList = () => {
-  const videoList = useSelector((state) => state.videos);
+const VideoList = ({ videoList }) => {
   return (
     <>
       <Col lg={3}>
