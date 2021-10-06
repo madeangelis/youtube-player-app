@@ -1,5 +1,6 @@
 import React from "react";
 import { Col } from "react-bootstrap";
+
 import VideoCard from "./VideoCard";
 
 const VideoList = ({ videoList }) => {

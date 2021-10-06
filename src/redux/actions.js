@@ -22,13 +22,11 @@ export function getVideoSearch(query) {
       .get(
         `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=${query}&type=video&key=${apiKey}`
       )
-      .then(
-        (result) => {
-          dispatch(getVideoSuccess(result.data));
-        },
-        (error) => {
-          dispatch(getVideoFailure(error));
-        }
-      );
+      .then((result) => {
+        dispatch(getVideoSuccess(result.data));
+      })
+      .catch((error) => {
+        dispatch(getVideoFailure(error));
+      });
   };
 }

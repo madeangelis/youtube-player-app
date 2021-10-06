@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -10,7 +10,7 @@ import SearchBar from "./SearchBar";
 import VideoList from "./VideoList";
 
 const Main = () => {
-  
+
   const videoList = useSelector((state) => state.videos);
   const video = videoList[0];
   const loading = useSelector((state) => state.isLoading);

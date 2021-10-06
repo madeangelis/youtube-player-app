@@ -6,6 +6,7 @@ import { getVideoSearch } from "../redux/actions";
 function SearchBar() {
   const [searchVideo, setSearchVideo] = useState("");
   const dispatch = useDispatch();
+  
   const handleChange = (e) => {
     setSearchVideo(e.target.value);
   };
