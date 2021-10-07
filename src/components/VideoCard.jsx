@@ -1,8 +1,8 @@
 import React from "react";
 
-const VideoCard = ({ image, title, channel }) => {
+const VideoCard = ({ image, title, channel, select }) => {
   return (
-    <div className="video-card mb-5 mb-md-0">
+    <div className="video-card mb-5 mb-md-0" onClick={select}>
       <div className="video-card-img">
         <img src={image} alt="" srcSet="" />
       </div>
