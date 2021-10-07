@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
 const VideoInfo = () => {
-  const video = useSelector((state) => state.videos[0]);
+  const video = useSelector((state) => state.selectedVideo);
   const history = useHistory();
 
   const handleBack = (e) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Player from "./player/Player";
 
@@ -10,9 +10,8 @@ import SearchBar from "./SearchBar";
 import VideoList from "./VideoList";
 
 const Main = () => {
-
   const videoList = useSelector((state) => state.videos);
-  const video = videoList[0];
+  const video = useSelector((state) => state.selectedVideo);
   const loading = useSelector((state) => state.isLoading);
 
   return (

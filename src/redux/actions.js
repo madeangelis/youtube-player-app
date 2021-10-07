@@ -5,6 +5,7 @@ import {
   GET_VIDEO_SUCCESS,
   GET_VIDEO_REQUEST,
   GET_VIDEO_FAILURE,
+  SET_SELECTED_VIDEO,
 } from "./types";
 
 const getVideoRequest = () => ({ type: GET_VIDEO_REQUEST });
@@ -30,3 +31,8 @@ export function getVideoSearch(query) {
       });
   };
 }
+
+export const setSelectedVideo = (video) => ({
+  type: SET_SELECTED_VIDEO,
+  payload: video,
+});
