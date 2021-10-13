@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Check the project
+## Visit the project
 
 https://youtube-player-app.vercel.app/
 
